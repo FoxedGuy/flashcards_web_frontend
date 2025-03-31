@@ -27,8 +27,29 @@
     padding: 0;
 }
 
-.nav-links button {
-    background: #578FCA;
+.nav-btn {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.4rem 1rem;
+    margin-left: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.nav-btn:hover {
+    background-color: white;
+    color: #3674B5;
+}
+
+.nav-links Link {
+    background-color: #578FCA;
+    border: solid 1px #578FCA;
 }
 
 .nav-links a,

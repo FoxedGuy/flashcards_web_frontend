@@ -2,6 +2,7 @@ import './App.css'
 import Navbar from "./components/navbar/Navbar.jsx";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Login from "./components/login/Login.jsx";
+import Register from "./components/register/Register.jsx";
 
 function Home(){
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home/>} />
                     <Route path="/login" element={<Login/>} />
+                    <Route path="/register" element={<Register/>} />
                 </Routes>
             </main>
         </div>

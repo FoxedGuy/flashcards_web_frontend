@@ -8,12 +8,8 @@ function Navbar(){
             <div className="nav-wrapper">
                 <Link to="/">FlashcardsWeb</Link>
                 <div className="nav-links">
-                    <button>
-                        <Link to="/login">Zaloguj</Link>
-                    </button>
-                    <button>
-                        <Link to="/register">Zarejestruj</Link>
-                    </button>
+                    <Link className="nav-btn" to="/login">Zaloguj</Link>
+                    <Link className="nav-btn" to="/register">Zarejestruj</Link>
                 </div>
             </div>
         </nav>
