@@ -7,6 +7,7 @@ function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirm, setConfirm] = useState('');
+    const [error, setError] = useState('');
 
     const isEmailValid = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -20,7 +21,7 @@ function Register() {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-
+        setError('');
         if (!isEmailValid(email)) {
             alert('Nieprawidłowy adres e-mail.');
             return;
@@ -51,13 +52,14 @@ function Register() {
             alert('Rejestracja zakończona sukcesem!');
         } catch (error) {
             console.error(error);
-            alert('Rejestracja nieudana');
+            setError(error.message);
         }
     };
 
     return (
         <div className="login-container">
             <h2>Załóż konto</h2>
+            {error && <div className="error-message">{error}</div>}
             <form onSubmit={handleRegister}>
                 <label>Nazwa użytkownika</label>
                 <input
