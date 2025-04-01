@@ -5,31 +5,39 @@ import {Link} from "react-router-dom";
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleLogin = async (e) => {
         e.preventDefault();
+        setError('')
 
         try {
-            const res = await fetch('http://localhost:8000/auth/login', {
+            const res = await fetch('http://localhost:8000/auth/token', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password }),
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    'username': username,
+                    'password': password,
+                }),
             });
 
             if (!res.ok) {
-                throw new Error('Błąd logowania');
+                const errorData = await res.json();
+                throw new Error(errorData.detail || 'Błąd logowania');
             }
             await res.json();
-            alert('Zalogowano!'); // tu możesz np. zapisać token
+            alert('Zalogowano!');
         } catch (error) {
             console.error(error);
-            alert('Logowanie nieudane');
+            setError(error.message);
+
         }
     };
 
     return (
         <div className="login-container">
             <h2>Zaloguj się</h2>
+            {error && <div className="error-message">{error}</div>}
             <form onSubmit={handleLogin}>
                 <label>Nazwa użytkownia</label>
                 <input
@@ -48,7 +56,7 @@ function Login() {
                 <button type="submit">Zaloguj</button>
                 <div className="no-account-div">
                     <label className="no-account">Nie masz konta? </label>
-                    <Link to="/register">Załóż je już teraz</Link>
+                    <Link className="no-account-link"   to="/register">Załóż je już teraz</Link>
                 </div>
             </form>
         </div>

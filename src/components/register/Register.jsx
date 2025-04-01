@@ -44,7 +44,8 @@ function Register() {
             });
 
             if (!res.ok) {
-                throw new Error('Błąd rejestracji');
+                const error = await res.json();
+                throw new Error(error.detail || 'Błąd rejestracji');
             }
 
             alert('Rejestracja zakończona sukcesem!');
@@ -89,7 +90,7 @@ function Register() {
                 <button type="submit">Zarejestruj</button>
                 <div className="no-account-div">
                     <label>Masz już konto?</label>
-                    <Link to="/login">Zaloguj się</Link>
+                    <Link className="no-account-link" to="/login">Zaloguj się</Link>
                 </div>
             </form>
         </div>
