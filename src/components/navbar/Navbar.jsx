@@ -15,7 +15,7 @@ function Navbar(){
                     {user ? (
                         <>
                             <Link className="nav-btn" to="/profile">Profil</Link>
-                            <Link className="nav-btn" onClick={logout}>Wyloguj</Link>
+                            <Link className="nav-btn" onClick={logout} to="/">Wyloguj</Link>
                         </>
                     ) : (
                         <>
