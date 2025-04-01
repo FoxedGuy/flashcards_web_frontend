@@ -8,7 +8,7 @@ function Home(){
     return (
         <>
             <h2>Witaj w aplikacji do tworzenia fiszek!</h2>
-            <p>Rozpocznij naukę tworząc nowe konto!</p>
+            <p>Rozpocznij naukę logując się bądź tworząc nowe konto!</p>
         </>
     );
 }
