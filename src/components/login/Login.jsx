@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Login.css';
+import {Link} from "react-router-dom";
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -45,6 +46,10 @@ function Login() {
                     required
                 />
                 <button type="submit">Zaloguj</button>
+                <div className="no-account-div">
+                    <label className="no-account">Nie masz konta? </label>
+                    <Link to="/register">Załóż je już teraz</Link>
+                </div>
             </form>
         </div>
     );
