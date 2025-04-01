@@ -1,36 +1,24 @@
 import { useState } from 'react';
 import './Login.css';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import { useAuth } from '../../context/AuthContext.jsx';
 
 function Login() {
+    const { login } = useAuth();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-
+    const navigate = useNavigate();
     const handleLogin = async (e) => {
         e.preventDefault();
         setError('')
 
         try {
-            const res = await fetch('http://localhost:8000/auth/token', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams({
-                    'username': username,
-                    'password': password,
-                }),
-            });
-
-            if (!res.ok) {
-                const errorData = await res.json();
-                throw new Error(errorData.detail || 'Błąd logowania');
-            }
-            await res.json();
-            alert('Zalogowano!');
-        } catch (error) {
-            console.error(error);
-            setError(error.message);
-
+            await login(username, password);
+            navigate('/');
+        } catch (err) {
+            console.error(err);
+            setError(err.message);
         }
     };
 
