@@ -1,8 +1,8 @@
+nav{
+    width:100%;
+}
+
 .nav-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     height: 70px;
     background-color: #3674B5;
     color: white;

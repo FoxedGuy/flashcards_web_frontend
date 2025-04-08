@@ -1,17 +1,19 @@
 .login-container {
-    margin-top: 150px;
-    max-width: 500px;
     margin-inline: auto;
-    padding: 2rem;
+    padding: 4rem;
     border-radius: 8px;
     text-align: center;
     background: #F2EFE7;
+    height:50%;
+    width: 20%;
+
 }
 
 .login-container h2 {
     color: #3674B5;
     font-size: 3rem;
-    margin-top: 0.3rem;
+    margin: 0;
+    padding-bottom: 1rem;
 }
 
 .login-container form {
@@ -81,4 +83,12 @@
     color: red;
     font-weight: bold;
     margin-bottom: 1rem;
+}
+
+.content-login{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #578FCA;
 }

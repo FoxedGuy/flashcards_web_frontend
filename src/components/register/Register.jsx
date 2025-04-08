@@ -57,44 +57,46 @@ function Register() {
     };
 
     return (
-        <div className="login-container">
-            <h2>Załóż konto</h2>
-            {error && <div className="error-message">{error}</div>}
-            <form onSubmit={handleRegister}>
-                <label>Nazwa użytkownika</label>
-                <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                />
-                <label>E-mail</label>
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <label>Hasło</label>
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <label>Powtórz hasło</label>
-                <input
-                    type="password"
-                    value={confirm}
-                    onChange={(e) => setConfirm(e.target.value)}
-                    required
-                />
-                <button type="submit">Zarejestruj</button>
-                <div className="no-account-div">
-                    <label>Masz już konto?</label>
-                    <Link className="no-account-link" to="/login">Zaloguj się</Link>
-                </div>
-            </form>
+        <div className="content-login">
+            <div className="login-container">
+                <h2>Załóż konto</h2>
+                {error && <div className="error-message">{error}</div>}
+                <form onSubmit={handleRegister}>
+                    <label>Nazwa użytkownika</label>
+                    <input
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                    />
+                    <label>E-mail</label>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                    <label>Hasło</label>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <label>Powtórz hasło</label>
+                    <input
+                        type="password"
+                        value={confirm}
+                        onChange={(e) => setConfirm(e.target.value)}
+                        required
+                    />
+                    <button type="submit">Zarejestruj</button>
+                    <div className="no-account-div">
+                        <label>Masz już konto?</label>
+                        <Link className="no-account-link" to="/login">Zaloguj się</Link>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }
