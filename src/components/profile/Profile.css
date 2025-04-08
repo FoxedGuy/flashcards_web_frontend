@@ -1,0 +1,25 @@
+.content-profile{
+    flex: 1;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    text-align: left;
+}
+
+.profile-info-div{
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info-div h2,
+.profile-info-div p{
+    color: #3674B5;
+}
+
