@@ -18,7 +18,8 @@ export const AuthProvider = ({ children }) => {
         })
             .then(res => res.ok ? res.json() : null)
             .then(data =>{
-                setUser(data?.user || null);
+                console.log(data)
+                setUser(data || null);
                 setLoading(false);
             })
             .catch(() => {
@@ -48,7 +49,7 @@ export const AuthProvider = ({ children }) => {
         });
 
         if (meRes.ok) {
-            const data = await res.json();
+            const data = await meRes.json();
             setUser(data);
         } else {
             setUser(null);
