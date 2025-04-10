@@ -7,11 +7,14 @@
 
 .white-box {
   background-color: white;
+  display: flex;
+  flex-direction: column;
   color: #578FCA;
   padding: 2rem;
   border-radius: 12px;
   width: 90%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 100%;
 }
 
 .content-home {
@@ -21,4 +24,29 @@
   justify-content: center;
   margin: 2rem;
   text-align: center;
+}
+
+.normal-btn {
+  background-color: transparent;
+  border: 2px solid #3674B5;
+  color: #3674B5;
+  padding: 0.4rem 1rem;
+  margin-left: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.normal-btn:hover {
+  background-color: #3674B5;
+  color: white;
+  border: none;
+}
+
+.normal-btn:focus {
+  outline: none;
 }

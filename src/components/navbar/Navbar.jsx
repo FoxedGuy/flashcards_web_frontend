@@ -14,8 +14,8 @@ function Navbar(){
                 <div className="nav-links">
                     {user ? (
                         <>
-                            <Link className="nav-btn" to="/flashcards">Fiszki</Link>
-                            <Link className="nav-btn" to="/profile">Profil</Link>
+                            <Link className="nav-btn" to="/user/groups">Fiszki</Link>
+                            <Link className="nav-btn" to="/user/profile">Profil</Link>
                             <Link className="nav-btn" onClick={logout} to="/">Wyloguj</Link>
                         </>
                     ) : (

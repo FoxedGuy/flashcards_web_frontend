@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Login from "./components/login/Login.jsx";
 import Register from "./components/register/Register.jsx";
 import Profile from "./components/profile/Profile.jsx";
+import GroupsDashboard from "./components/groups_dashboard/Groups-Dashboard.jsx";
 import PrivateRoute from "./components/protected-routes/PrivateRoutes.jsx";
 import {useAuth} from "./context/AuthContext.jsx";
 
@@ -39,7 +40,8 @@ function App() {
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Register/>} />
                 <Route element={<PrivateRoute/>}>
-                    <Route path="/profile" element={<Profile/>} />
+                    <Route path="/user/profile" element={<Profile/>} />
+                    <Route path="/user/groups" element={<GroupsDashboard/>} />
                 </Route>
             </Routes>
         </div>
